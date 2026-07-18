@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}AI+冲击动力学 课题组{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg">
+        <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="badge-dot"></span> 精细爆破全国重点实验室
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">AI赋能</span>
+            <span class="title-highlight">冲击动力学</span>
+            <span class="title-line">前沿研究</span>
+        </h1>
+        <p class="hero-subtitle">
+            融合人工智能与爆炸冲击动力学，<br>
+            数据驱动本构建模 · 物理融合神经网络 · 多尺度HPC模拟 · 生成式AI教育
+        </p>
+        <div class="hero-actions">
+            <a href="/research" class="btn btn-primary">
+                探索研究方向 <span class="arrow">→</span>
+            </a>
+            <a href="/ai-lab" class="btn btn-secondary">
+                AI学习实验室 <span class="arrow">→</span>
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">省部级以上项目</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="30">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">高水平论文</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="1700">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">论文他引</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">授权发明专利</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>向下滚动</span>
+        <div class="scroll-indicator"></div>
+    </div>
+</section>
+
+<!-- Research Directions Preview -->
+<section class="section directions-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">研究方向</span>
+            <h2 class="section-title">前沿交叉 · 五位一体</h2>
+            <p class="section-desc">
+                课题组围绕爆炸冲击动力学，构建从<strong>数值模拟</strong>到<strong>AI驱动</strong>的全链条研究体系
+            </p>
+        </div>
+        <div class="directions-grid">
+            {% for d in directions %}
+            <div class="direction-card" style="--card-color: {{ d.color }}">
+                <div class="card-header">
+                    <span class="card-icon">{{ d.icon }}</span>
+                    <span class="card-tag" style="background: {{ d.color }}20; color: {{ d.color }}">{{ d.tag }}</span>
+                </div>
+                <h3 class="card-title">{{ d.title }}</h3>
+                <p class="card-subtitle">{{ d.subtitle }}</p>
+                <p class="card-desc">{{ d.description[:120] }}...</p>
+                <a href="/research#dir-{{ d.id }}" class="card-link">了解更多 →</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="section-cta">
+            <a href="/research" class="btn btn-outline">查看全部 6 个研究方向 →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Team Preview -->
+<section class="section team-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">双导师制</span>
+            <h2 class="section-title">课题组核心成员</h2>
+            <p class="section-desc">学科交叉、优势互补的导师团队</p>
+        </div>
+        <div class="team-cards">
+            <div class="member-card">
+                <div class="member-avatar" style="background: linear-gradient(135deg, #ff6b35, #f7c948);">
+                    <span>GC</span>
+                </div>
+                <div class="member-info">
+                    <h3>高矗</h3>
+                    <span class="member-title">副教授 / 博士导师</span>
+                    <span class="member-role">课题组负责人 · 研究方向规划</span>
+                    <p class="member-bio">工学博士，副教授，精细爆破全国重点实验室爆炸力学研究所副所长。长期从事爆炸与冲击现象高精度数值模拟、人工智能赋能冲击动力学前沿研究。</p>
+                    <div class="member-tags">
+                        <span>爆炸力学</span><span>数值模拟</span><span>数据驱动</span><span>PINN</span>
+                    </div>
+                    <a href="/team#gao-chu" class="member-link">查看完整资料 →</a>
+                </div>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar" style="background: linear-gradient(135deg, #4a90d9, #2ecc71);">
+                    <span>SHQ</span>
+                </div>
+                <div class="member-info">
+                    <h3>桑鸿乾</h3>
+                    <span class="member-title">副研究员 / 硕士导师</span>
+                    <span class="member-role">技术负责人 · AI平台开发</span>
+                    <p class="member-bio">本硕博毕业于武汉大学，博士后于英国伦敦国王学院。主要从事多尺度模拟仿真和HPC/AI应用开发，主持国家自然科学基金项目3项，SCI论文他引超1700次。</p>
+                    <div class="member-tags">
+                        <span>HPC/AI</span><span>生成式AI</span><span>多尺度模拟</span><span>教育大模型</span>
+                    </div>
+                    <a href="/team#sang-hongqian" class="member-link">查看完整资料 →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News -->
+<section class="section news-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">课题组动态</span>
+            <h2 class="section-title">最新消息</h2>
+        </div>
+        <div class="news-timeline">
+            {% for item in news %}
+            <div class="news-item">
+                <div class="news-date">
+                    <span class="date-dot"></span>
+                    {{ item.date }}
+                </div>
+                <div class="news-content">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.desc }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-content">
+                <h2>加入我们</h2>
+                <p>课题组常年招收力学、人工智能、计算机、电子信息、土木水利、机械、弹药工程与爆炸技术、安全科学等方向的硕士研究生。<br><strong>专业不限，兴趣优先！</strong></p>
+                <p>团队经费充足、氛围活跃融洽，欢迎热爱科研、愿意钻研的你加入！</p>
+                <div class="cta-buttons">
+                    <a href="/team" class="btn btn-primary">了解导师团队</a>
+                    <a href="/ai-lab" class="btn btn-secondary">AI学习资源</a>
+                </div>
+            </div>
+            <div class="cta-visual">
+                <div class="cta-icon-large">🧪</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+.claude/
+ss.docx
+*.mhtml
+ss_parsed.txt
+gaochu_text.txt
+sanghongqian_text.txt

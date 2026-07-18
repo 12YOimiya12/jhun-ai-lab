@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}学术成果{% endblock %}
+{% block content %}
+
+<!-- Page Header -->
+<section class="page-hero pubs-hero">
+    <div class="container">
+        <span class="page-tag">Publications &amp; Achievements</span>
+        <h1 class="page-title">学术成果</h1>
+        <p class="page-subtitle">论文 · 专著 · 专利 · 课程</p>
+    </div>
+</section>
+
+<!-- Publications -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">学术论文</span>
+            <h2 class="section-title">代表性科研成果</h2>
+        </div>
+
+        {% for pub_group in publications %}
+        <div class="pub-group">
+            <h3 class="pub-group-title">{{ pub_group.type }}</h3>
+            <div class="pub-list">
+                {% for paper in pub_group.papers %}
+                <div class="pub-item">
+                    <span class="pub-number">{{ loop.index }}</span>
+                    <p class="pub-text">{{ paper }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Courses -->
+<section class="section courses-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">教学工作</span>
+            <h2 class="section-title">主讲课程</h2>
+        </div>
+        <div class="courses-grid">
+            {% for c in courses %}
+            <div class="course-card">
+                <div class="course-header">
+                    <span class="course-icon">
+                        {% if '研究生' in c.level %}📘{% else %}📗{% endif %}
+                    </span>
+                    <span class="course-level">{{ c.level }}</span>
+                </div>
+                <h4 class="course-name">{{ c.name }}</h4>
+                <span class="course-teacher">授课教师：{{ c.teacher }}</span>
+                <p class="course-desc">{{ c.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="section stats-section">
+    <div class="container">
+        <div class="achievement-stats">
+            <div class="achieve-stat">
+                <span class="achieve-number">30<sup>+</sup></span>
+                <span class="achieve-label">高水平论文</span>
+            </div>
+            <div class="achieve-stat">
+                <span class="achieve-number">2</span>
+                <span class="achieve-label">学术专著</span>
+            </div>
+            <div class="achieve-stat">
+                <span class="achieve-number">6</span>
+                <span class="achieve-label">授权发明专利</span>
+            </div>
+            <div class="achieve-stat">
+                <span class="achieve-number">6<sup>+</sup></span>
+                <span class="achieve-label">省部级以上项目</span>
+            </div>
+            <div class="achieve-stat">
+                <span class="achieve-number">1700<sup>+</sup></span>
+                <span class="achieve-label">论文他引</span>
+            </div>
+            <div class="achieve-stat">
+                <span class="achieve-number">6</span>
+                <span class="achieve-label">主讲课程</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

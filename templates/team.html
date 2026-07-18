@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block title %}团队成员{% endblock %}
+{% block content %}
+
+<!-- Page Header -->
+<section class="page-hero team-hero">
+    <div class="container">
+        <span class="page-tag">Team Members</span>
+        <h1 class="page-title">团队成员</h1>
+        <p class="page-subtitle">双导师制 · 学科交叉 · 优势互补</p>
+    </div>
+</section>
+
+<!-- Team Members -->
+<section class="section">
+    <div class="container">
+        {% for m in members %}
+        <div class="member-profile" id="{% if '高' in m.name %}gao-chu{% else %}sang-hongqian{% endif %}">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar-lg" style="background: linear-gradient(135deg, {{ m.avatar_color }}, {{ m.avatar_color }}88);">
+                    <span>{{ m.initials }}</span>
+                </div>
+                <div class="profile-title-block">
+                    <h2 class="profile-name">{{ m.name }}</h2>
+                    <span class="profile-title">{{ m.title }}</span>
+                    <span class="profile-role-badge">{{ m.role }}</span>
+                </div>
+            </div>
+
+            <!-- Profile Body -->
+            <div class="profile-body">
+                <div class="profile-main">
+                    <!-- Basic Info -->
+                    <div class="profile-section">
+                        <h3><span class="section-icon">🏫</span> 所属机构</h3>
+                        <p>{{ m.dept }}</p>
+                        <p class="profile-lab">{{ m.lab }}</p>
+                        <p class="profile-contact">
+                            📧 <a href="mailto:{{ m.email }}">{{ m.email }}</a>
+                            {% if m.qq %} | 💬 QQ: {{ m.qq }}{% endif %}
+                        </p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="profile-section">
+                        <h3><span class="section-icon">🎓</span> 教育背景</h3>
+                        <ul class="profile-list">
+                            {% for edu in m.education %}
+                            <li>{{ edu }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Honors -->
+                    <div class="profile-section">
+                        <h3><span class="section-icon">🏆</span> 荣誉与任职</h3>
+                        <ul class="profile-list">
+                            {% for honor in m.honors %}
+                            <li>{{ honor }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Journals -->
+                    {% if m.journals %}
+                    <div class="profile-section">
+                        <h3><span class="section-icon">📖</span> 学术服务</h3>
+                        <ul class="profile-list">
+                            {% for j in m.journals %}
+                            <li>{{ j }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="profile-sidebar">
+                    <!-- Research Focus -->
+                    <div class="profile-section">
+                        <h3><span class="section-icon">🔬</span> 研究重点</h3>
+                        <p class="profile-focus">{{ m.research_focus }}</p>
+                    </div>
+
+                    <!-- Courses -->
+                    <div class="profile-section">
+                        <h3><span class="section-icon">📝</span> 主讲课程</h3>
+                        <ul class="profile-list">
+                            {% for course in m.courses %}
+                            <li>{{ course }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Projects (for Sang only) -->
+                    {% if m.projects %}
+                    <div class="profile-section">
+                        <h3><span class="section-icon">🚀</span> 主持开发项目</h3>
+                        <ul class="profile-list">
+                            {% for proj in m.projects %}
+                            <li>{{ proj }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Team Philosophy -->
+<section class="section philosophy-section">
+    <div class="container">
+        <div class="philosophy-card">
+            <h2>我们的团队理念</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <span class="phil-icon">🎯</span>
+                    <h4>专业不限</h4>
+                    <p>力学、AI、计算机、电子信息、土木水利、机械、弹药工程、安全科学 — 兴趣优先</p>
+                </div>
+                <div class="philosophy-item">
+                    <span class="phil-icon">🤝</span>
+                    <h4>双导师制</h4>
+                    <p>高矗老师把握研究方向，桑鸿乾老师负责技术落地，学科交叉指导</p>
+                </div>
+                <div class="philosophy-item">
+                    <span class="phil-icon">💡</span>
+                    <h4>AI驱动</h4>
+                    <p>紧跟AI技术前沿，掌握Claude Code、ChatGPT等AI辅助开发工具</p>
+                </div>
+                <div class="philosophy-item">
+                    <span class="phil-icon">🌍</span>
+                    <h4>实战导向</h4>
+                    <p>从Web开发到服务器部署，从数据分析到工业智能体，动手实践</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

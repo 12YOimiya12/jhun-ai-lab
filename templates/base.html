@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI+冲击动力学{% endblock %} | 江汉大学 · 数字建造与爆破工程学院</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="江汉大学 - 数字建造与爆破工程学院 | AI + 冲击动力学 课题组">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <div class="logo-icon">
+                    <span class="logo-atom">⚛</span>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">AI<sup>+</sup> 冲击动力学</span>
+                    <span class="logo-sub">江汉大学 · 数字建造与爆破工程学院</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}"><span class="nav-icon">🏠</span> 首页</a></li>
+                <li><a href="/research" class="nav-link {% if request.path == '/research' %}active{% endif %}"><span class="nav-icon">🔬</span> 研究方向</a></li>
+                <li><a href="/team" class="nav-link {% if request.path == '/team' %}active{% endif %}"><span class="nav-icon">👥</span> 团队成员</a></li>
+                <li><a href="/publications" class="nav-link {% if request.path == '/publications' %}active{% endif %}"><span class="nav-icon">📚</span> 学术成果</a></li>
+                <li><a href="/ai-lab" class="nav-link {% if request.path == '/ai-lab' %}active{% endif %}"><span class="nav-icon">🤖</span> AI实验室</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🏫 江汉大学</h4>
+                    <p>数字建造与爆破工程学院</p>
+                    <p>精细爆破全国重点实验室</p>
+                    <p>爆炸力学研究所</p>
+                </div>
+                <div class="footer-col">
+                    <h4>🔗 快速链接</h4>
+                    <a href="/research">研究方向</a>
+                    <a href="/team">团队成员</a>
+                    <a href="/publications">学术成果</a>
+                    <a href="/ai-lab">AI实验室</a>
+                </div>
+                <div class="footer-col">
+                    <h4>📧 联系方式</h4>
+                    <p>高矗老师：gaochu@jhun.edu.cn</p>
+                    <p>桑鸿乾老师：sang@jhun.edu.cn</p>
+                    <p>地址：湖北省武汉市</p>
+                </div>
+                <div class="footer-col">
+                    <h4>🌐 友情链接</h4>
+                    <a href="https://www.jhun.edu.cn/" target="_blank">江汉大学官网</a>
+                    <a href="https://bpxy.jhun.edu.cn/" target="_blank">数字建造与爆破工程学院</a>
+                    <a href="https://dtsci.cn/" target="_blank">神思科学</a>
+                    <a href="https://github.com/" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 江汉大学 · AI+冲击动力学课题组 | Powered by Python Flask &amp; Cloudflare</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="回到顶部">↑</button>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

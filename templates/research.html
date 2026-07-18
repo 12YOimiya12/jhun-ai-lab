@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}研究方向{% endblock %}
+{% block content %}
+
+<!-- Page Header -->
+<section class="page-hero research-hero">
+    <div class="container">
+        <span class="page-tag">Research Directions</span>
+        <h1 class="page-title">研究方向</h1>
+        <p class="page-subtitle">爆炸与冲击动力学 × 人工智能 — 理论与实践并重</p>
+    </div>
+</section>
+
+<!-- Detailed Directions -->
+<section class="section">
+    <div class="container">
+        {% for d in directions %}
+        <div class="direction-detail" id="dir-{{ d.id }}" style="--card-color: {{ d.color }}">
+            <div class="direction-detail-grid">
+                <div class="direction-detail-visual">
+                    <div class="direction-visual-circle" style="background: {{ d.color }}15; border-color: {{ d.color }}40;">
+                        <span class="direction-large-icon">{{ d.icon }}</span>
+                    </div>
+                    <div class="direction-number" style="color: {{ d.color }}">0{{ d.id }}</div>
+                </div>
+                <div class="direction-detail-content">
+                    <div class="direction-detail-header">
+                        <span class="detail-tag" style="background: {{ d.color }}20; color: {{ d.color }}">{{ d.tag }}</span>
+                        <span class="detail-subtitle" style="color: {{ d.color }}">{{ d.subtitle }}</span>
+                    </div>
+                    <h2 class="detail-title">{{ d.title }}</h2>
+                    <p class="detail-desc">{{ d.description }}</p>
+                    <div class="detail-keywords">
+                        {% for kw in d.keywords %}
+                        <span class="keyword-tag">{{ kw }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Research Pipeline -->
+<section class="section pipeline-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">研究体系</span>
+            <h2 class="section-title">全链条研究范式</h2>
+            <p class="section-desc">从物理实验到AI驱动的前沿研究闭环</p>
+        </div>
+        <div class="pipeline">
+            <div class="pipeline-item">
+                <div class="pipeline-icon">💥</div>
+                <h4>爆炸实验</h4>
+                <p>高精度爆炸与冲击实验数据采集</p>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-item">
+                <div class="pipeline-icon">💻</div>
+                <h4>数值模拟</h4>
+                <p>有限元 / 离散元高保真数值计算</p>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-item">
+                <div class="pipeline-icon">🧠</div>
+                <h4>AI建模</h4>
+                <p>深度学习 / PINN 数据驱动代理模型</p>
+            </div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-item">
+                <div class="pipeline-icon">🎯</div>
+                <h4>工程应用</h4>
+                <p>毁伤评估 / 防护设计 / 智慧教育</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

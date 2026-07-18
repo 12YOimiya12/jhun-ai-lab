@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+{% block title %}AI 学习实验室{% endblock %}
+{% block content %}
+
+<!-- Page Header -->
+<section class="page-hero ailab-hero">
+    <div class="container">
+        <span class="page-tag">AI Learning Lab</span>
+        <h1 class="page-title">AI 学习实验室</h1>
+        <p class="page-subtitle">两个月突击AI基础 · 从Python到云部署的完整学习路径</p>
+    </div>
+</section>
+
+<!-- Learning Path -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">学习路径</span>
+            <h2 class="section-title">4阶段 · 8周突击计划</h2>
+            <p class="section-desc">按桑鸿乾老师制定的学习路线，每周投入充足时间，配合AI工具高效学习</p>
+        </div>
+
+        <div class="path-timeline">
+            <div class="path-item">
+                <div class="path-marker">
+                    <span class="path-week">第1-2周</span>
+                    <div class="path-dot"></div>
+                </div>
+                <div class="path-card">
+                    <div class="path-card-header">
+                        <span class="path-icon">🐍</span>
+                        <h3>Python编程强化</h3>
+                    </div>
+                    <ul class="path-checklist">
+                        <li>在"菜鸟教程"上复习Python基础语法</li>
+                        <li>理解变量、函数、类、模块等核心概念</li>
+                        <li>掌握NumPy/Pandas数据处理基础</li>
+                        <li>能阅读并理解AI生成的Python代码</li>
+                        <li>使用Claude Code辅助编写和调试代码</li>
+                    </ul>
+                    <div class="path-tools">
+                        <span>推荐工具：</span>
+                        <a href="https://www.runoob.com/python3/python3-tutorial.html" target="_blank">菜鸟教程</a>
+                        <a href="https://claude.ai/code" target="_blank">Claude Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="path-item">
+                <div class="path-marker">
+                    <span class="path-week">第3-4周</span>
+                    <div class="path-dot"></div>
+                </div>
+                <div class="path-card">
+                    <div class="path-card-header">
+                        <span class="path-icon">🌐</span>
+                        <h3>Web前端开发</h3>
+                    </div>
+                    <ul class="path-checklist">
+                        <li>HTML：常用标签、语义化、表单</li>
+                        <li>CSS：选择器、盒模型、Flexbox/Grid布局</li>
+                        <li>JavaScript：DOM操作、事件处理、fetch API</li>
+                        <li>制作一个个人主页作为练习项目</li>
+                        <li>理解"客户端本质是套壳浏览器"</li>
+                    </ul>
+                    <div class="path-tools">
+                        <span>推荐工具：</span>
+                        <a href="https://www.runoob.com/html/html-tutorial.html" target="_blank">HTML教程</a>
+                        <a href="https://www.runoob.com/css/css-tutorial.html" target="_blank">CSS教程</a>
+                        <a href="https://www.runoob.com/js/js-tutorial.html" target="_blank">JS教程</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="path-item">
+                <div class="path-marker">
+                    <span class="path-week">第5-6周</span>
+                    <div class="path-dot"></div>
+                </div>
+                <div class="path-card">
+                    <div class="path-card-header">
+                        <span class="path-icon">☁️</span>
+                        <h3>服务器部署</h3>
+                    </div>
+                    <ul class="path-checklist">
+                        <li>在阿里云注册账号，购买学生优惠服务器</li>
+                        <li>学习Linux基本命令和文件操作</li>
+                        <li>使用SSH远程连接云服务器</li>
+                        <li>安装配置Nginx + Python环境</li>
+                        <li>使用Gunicorn部署Flask应用</li>
+                        <li>了解Cloudflare Pages/Workers部署方式</li>
+                    </ul>
+                    <div class="path-tools">
+                        <span>推荐工具：</span>
+                        <a href="https://www.aliyun.com/product/ecs" target="_blank">阿里云ECS</a>
+                        <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="path-item">
+                <div class="path-marker">
+                    <span class="path-week">第7-8周</span>
+                    <div class="path-dot"></div>
+                </div>
+                <div class="path-card">
+                    <div class="path-card-header">
+                        <span class="path-icon">🤖</span>
+                        <h3>AI基础认知 + 工具链</h3>
+                    </div>
+                    <ul class="path-checklist">
+                        <li>理解大语言模型（LLM）基本原理</li>
+                        <li>掌握Transformer架构和"幻觉"成因</li>
+                        <li>熟练使用ChatGPT、Claude Code、Gemini</li>
+                        <li>了解RAG、Agent、Function Calling概念</li>
+                        <li>维护GitHub作为学习日志和简历</li>
+                        <li>学会向AI提供充分背景信息获取优质回答</li>
+                    </ul>
+                    <div class="path-tools">
+                        <span>推荐工具：</span>
+                        <a href="https://chat.openai.com/" target="_blank">ChatGPT</a>
+                        <a href="https://aistudio.google.com/" target="_blank">Gemini</a>
+                        <a href="https://github.com/" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resources -->
+<section class="section resources-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">学习资源</span>
+            <h2 class="section-title">推荐工具与平台</h2>
+        </div>
+        <div class="resources-grid">
+            {% for r in resources %}
+            <a href="{{ r.url }}" target="_blank" class="resource-card">
+                <span class="resource-icon">{{ r.icon }}</span>
+                <h4>{{ r.name }}</h4>
+                <p>{{ r.desc }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- AI Assistant -->
+<section class="section assistant-section">
+    <div class="container">
+        <div class="assistant-card">
+            <div class="assistant-header">
+                <span class="assistant-icon">🤖</span>
+                <div>
+                    <h2>AI 学习助手</h2>
+                    <p>遇到问题？输入关键词获取针对性学习建议</p>
+                </div>
+            </div>
+            <div class="assistant-chat">
+                <div class="chat-quick-actions">
+                    <button class="quick-btn" data-question="python">🐍 Python学习</button>
+                    <button class="quick-btn" data-question="html">📄 HTML入门</button>
+                    <button class="quick-btn" data-question="css">🎨 CSS样式</button>
+                    <button class="quick-btn" data-question="javascript">⚙️ JavaScript</button>
+                    <button class="quick-btn" data-question="linux">🐧 Linux操作</button>
+                    <button class="quick-btn" data-question="deploy">🚀 Web部署</button>
+                    <button class="quick-btn" data-question="cloudflare">🌩 Cloudflare</button>
+                    <button class="quick-btn" data-question="learning_path">🗺 完整学习路径</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="输入你的问题...">
+                    <button id="chatSendBtn" class="chat-send-btn">发送 →</button>
+                </div>
+                <div class="chat-response" id="chatResponse" style="display: none;">
+                    <div class="response-content" id="responseContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tips -->
+<section class="section tips-section">
+    <div class="container">
+        <div class="tips-card">
+            <h3>💡 学习建议</h3>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h4>🔑 善用AI对话</h4>
+                    <p>提供充分的背景信息，描述清楚你的需求和遇到的困难，AI会给出更精准的解答。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>📝 GitHub日志</h4>
+                    <p>将每天的学习笔记、代码练习提交到GitHub，既是学习记录也是未来的技术简历。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🔄 动手实践</h4>
+                    <p>不要只看教程，动手敲代码。用HTML/CSS/JS做一个网页，用Python写数据处理脚本。</p>
+                </div>
+                <div class="tip-item">
+                    <h4>🎯 目标导向</h4>
+                    <p>9月开学前的能力目标：独立或借助AI实现具体需求，如开发CAD图纸处理助理。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// AI Learning Assistant
+document.addEventListener('DOMContentLoaded', function() {
+    const quickBtns = document.querySelectorAll('.quick-btn');
+    const chatInput = document.getElementById('chatInput');
+    const sendBtn = document.getElementById('chatSendBtn');
+    const responseDiv = document.getElementById('chatResponse');
+    const responseContent = document.getElementById('responseContent');
+
+    async function askQuestion(question) {
+        responseDiv.style.display = 'block';
+        responseContent.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+
+        try {
+            const resp = await fetch('/api/ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question: question })
+            });
+            const data = await resp.json();
+            responseContent.innerHTML = data.answer.replace(/\n/g, '<br>');
+        } catch (e) {
+            responseContent.innerHTML = '抱歉，请求失败。请稍后重试或直接使用ChatGPT/Claude Code等AI工具。';
+        }
+    }
+
+    quickBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const question = this.dataset.question;
+            chatInput.value = question;
+            askQuestion(question);
+        });
+    });
+
+    sendBtn.addEventListener('click', function() {
+        const question = chatInput.value.trim();
+        if (question) {
+            askQuestion(question);
+        }
+    });
+
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const question = chatInput.value.trim();
+            if (question) {
+                askQuestion(question);
+            }
+        }
+    });
+});
+</script>
+{% endblock %}
